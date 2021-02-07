@@ -75,4 +75,3 @@ az vm create `
     --ssh-key-value ~/.ssh/id_rsa.pub `
     --public-ip-address-dns-name kubeadm-worker-2
 
-Set-Location ~/projects/pd-tech-fest-2019/Powershell
