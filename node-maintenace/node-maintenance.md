@@ -125,6 +125,7 @@ kubectl cp kube-system/etcd-kube-master:/var/lib/etcd/snapshot.db  /home/azureus
 ```
 
 ### backup snapshot and other files
+`/var/lib/etcd` is mounted as volume inside the etcd-kube-master container
 
 ```bash
 
