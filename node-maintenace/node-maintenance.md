@@ -18,7 +18,7 @@ sudo grep data-dir /etc/kubernetes/manifests/etcd.yaml
 
 kubectl get pods --namespace kube-system
 
-kubectl --namespace kube-system exec --it etcd-<<name of the pod>> -- sh
+kubectl --namespace kube-system exec -it etcd-<<name of the pod>> -- sh
 
 ```
 
@@ -315,6 +315,14 @@ sudo apt-mark hold kubectl kubelet
 
 sudo systemctl daemon-reload
 
-sudo systemctl restart kubectl
+sudo systemctl restart kubelet
+
+```
+
+### Uncordon the node
+
+```bash
+
+kubectl uncordon kube-worker-1
 
 ```
