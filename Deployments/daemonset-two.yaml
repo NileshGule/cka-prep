@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: ds-two
+spec:
+  selector:
+    matchLabels:
+      system: DaemonSetTwo
+  template:
+    metadata:
+      labels:
+        system: DaemonSetTwo
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.15.1
+        ports:
+        - containerPort: 80
+  updateStrategy:
+    rollingUpdate:
+      maxUnavailable: 1  
+    type: RollingUpdate
