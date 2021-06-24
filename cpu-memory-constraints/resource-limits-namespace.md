@@ -23,3 +23,11 @@ kubectl --namespace low-usage-limit create -f low-resource-limit-range.yaml
 kubectl describe limitrange --namespace low-usage-limit
 
 ```
+
+## Create deployment 
+
+```bash
+
+kubectl create deployment limited-hog --image vish/stress -n low-usage-limit
+
+```

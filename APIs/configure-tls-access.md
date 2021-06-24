@@ -51,3 +51,14 @@ kubectl config view | grep server
 * - https://172.0.0.4:6443
 
 ```
+
+## Hit API using `curl` command
+
+```bash
+
+curl --cert ./client.pem \
+--key ./client-key.pem \
+--cacert ./ca.pem \
+https://172.0.0.4:6443/api/v1/pods
+
+```
