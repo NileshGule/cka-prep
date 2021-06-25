@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: carmap
+data:
+  car.make: Ford
+  car.model: Mustang
+  car.trim: Shelby
