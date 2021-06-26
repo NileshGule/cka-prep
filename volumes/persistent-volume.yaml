@@ -8,6 +8,7 @@ spec:
   accessModes:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
+  storageClassName: manual
   nfs:
     path: /opt/sfw
     server: kube-master

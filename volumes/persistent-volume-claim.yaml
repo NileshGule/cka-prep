@@ -3,8 +3,9 @@ kind: PersistentVolumeClaim
 metadata:
   name: mypvc
 spec:
+  storageClassName: manual
   resources:
     requests:
-      storage: 20Mi
+      storage: 200Mi
   accessModes:
     - ReadWriteMany
