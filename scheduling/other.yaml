@@ -1,0 +1,44 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: other
+spec:
+  containers:
+  - name: vip1
+    image: busybox
+    args:
+    - sleep
+    - "1000000"
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "100m"
+  - name: vip2
+    image: busybox
+    args:
+    - sleep
+    - "1000000"
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "100m"
+  - name: vip23
+    image: busybox
+    args:
+    - sleep
+    - "1000000"
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "100m"
+  - name: vip4
+    image: busybox
+    args:
+    - sleep
+    - "1000000"
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "100m"
+  nodeSelector:
+    status: other  
