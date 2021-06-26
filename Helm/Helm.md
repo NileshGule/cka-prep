@@ -25,3 +25,4 @@ sudo cp linux-amd64/helm /usr/local/bin/helm
 helm search hub database
 
 ```
+

@@ -53,3 +53,11 @@ kubectl -n linkerdviz edit svc web
 ```
 
 Add friendly nodePort: 31500 and change type of service from LoadBalancer to NodePort
+
+## Inject linkerd annotation into deployment
+
+```bash
+
+kubectl get deploy nginx-one --output yaml | linkerd inject - | kubectl apply -f -
+
+```
