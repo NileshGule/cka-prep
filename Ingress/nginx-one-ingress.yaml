@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-one-ingress
+spec:
+  selector:
+    matchLabels:
+      app: nginx-one-ingress
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: nginx-one-ingress
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.20.1
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
+          protocol: TCP
