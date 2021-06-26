@@ -40,6 +40,16 @@ curl nginx-nodeport.default
 
 ```bash
 
-k -n kube-system get po coredns-85d9df8444-pdxjn -o yaml
+kubectl -n kube-system get po coredns-85d9df8444-pdxjn -o yaml
+
+```
+
+## View configmaps in kube-system namespace
+
+```bash
+
+kubectl -n kube-system get cm
+
+kubectl -n kube-system describe cm coredns
 
 ```
