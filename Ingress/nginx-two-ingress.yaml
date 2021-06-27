@@ -16,9 +16,12 @@ spec:
       - name: nginx
         image: nginx:1.20.1
         resources:
+          requests:
+            memory: "32Mi"
+            cpu: "100m"
           limits:
-            memory: "128Mi"
-            cpu: "500m"
+            memory: "64Mi"
+            cpu: "200m"
         ports:
         - containerPort: 80
           protocol: TCP
