@@ -33,7 +33,7 @@ sudo apt install kubeadm -y
 
 ```bash
 
-sudo apt install kubeadm -y
+sudo kubeadm init
 
 ```
 
