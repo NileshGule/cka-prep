@@ -33,3 +33,17 @@ sudo systemctl status haproxy.service
 sudo vi /etc/hosts
 
 ```
+
+## Open port 9999 (if not already opened) on proxy node
+
+```bash
+
+az vm open-port `
+--resource-group demo-kubeadm `
+--name kubeadm-ha-proxy --port 9999
+
+az vm open-port `
+--resource-group demo-kubeadm `
+--name kubeadm-ha-proxy --port 6443
+
+```

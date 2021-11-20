@@ -16,11 +16,27 @@ az vm start --resource-group demo-kubeadm --name kube-worker-2
 
 ```bash
 
-az vm stop --resource-group demo-kubeadm --name kube-master
+az vm stop --resource-group demo-kubeadm-cka --name kube-master
 
-az vm stop --resource-group demo-kubeadm --name kube-worker-1
+az vm stop --resource-group demo-kubeadm-cka --name kube-worker-1
 
-az vm stop --resource-group demo-kubeadm --name kube-worker-2
+az vm stop --resource-group demo-kubeadm-cka --name kube-worker-2
+
+az vm stop --ids $(az vm list -g demo-kubeadm-cka --query "[].id" -o tsv)
+
+```
+
+## Start CKA VMs
+
+```bash
+
+az vm start --resource-group demo-kubeadm-cka --name kube-master
+
+az vm start --resource-group demo-kubeadm-cka --name kube-worker-1
+
+az vm start --resource-group demo-kubeadm-cka --name kube-worker-2
+
+az vm start --ids $(az vm list -g demo-kubeadm-cka --query "[].id" -o tsv)
 
 ```
 

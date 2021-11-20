@@ -2,13 +2,9 @@ Param(
     [parameter(Mandatory = $false)]
     [string]$subscriptionName = "Microsoft Azure Sponsorship",
     [parameter(Mandatory = $false)]
-    [string]$resourceGroupName = "demo-kubeadm",
+    [string]$resourceGroupName = "demo-kubeadm-cka",
     [parameter(Mandatory = $false)]
-    [string]$resourceGroupLocaltion = "South East Asia",
-    [parameter(Mandatory = $false)]
-    [int16]$workerNodeCount = 3,
-    [parameter(Mandatory = $false)]
-    [string]$kubernetesVersion = "1.19.3"
+    [string]$resourceGroupLocaltion = "South East Asia"
 )
 
 # Set Azure subscription name
@@ -48,7 +44,7 @@ az vm create `
     --data-disk-sizes-gb 10 `
     --admin-username azuser `
     --ssh-key-value ~/.ssh/id_rsa.pub `
-    --public-ip-address-dns-name kubeadm-master
+    --public-ip-address-dns-name kubeadm-cka-master
 
 # Create the two worker nodes
 Write-Host "Creating worker node 1 Virtual machine"
@@ -61,7 +57,7 @@ az vm create `
     --data-disk-sizes-gb 10 `
     --admin-username azuser `
     --ssh-key-value ~/.ssh/id_rsa.pub `
-    --public-ip-address-dns-name kubeadm-worker-1
+    --public-ip-address-dns-name kubeadm-cka-worker-1
 
 Write-Host "Creating worker node 2 Virtual machine"
 
@@ -73,5 +69,5 @@ az vm create `
     --data-disk-sizes-gb 10 `
     --admin-username azuser `
     --ssh-key-value ~/.ssh/id_rsa.pub `
-    --public-ip-address-dns-name kubeadm-worker-2
+    --public-ip-address-dns-name kubeadm-cka-worker-2
 
