@@ -81,3 +81,25 @@ set-context john-context \
 ```
 
 ## Alternate option for adding kubeconfig file
+
+Copy existing kubeconfig 
+
+```
+
+cp ~/.kube/config ~/.kube/john.config
+
+```
+
+Update user, name attributes for Context
+Update current context
+Update client-certificate-data and client-key-data attributes
+
+base64 encode john.crt and john.key
+
+```
+
+cat john.crt | base64 -w0
+
+cat john.key | base64 -w0
+
+```
