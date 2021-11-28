@@ -14,7 +14,7 @@ kubectl create ns finance
 
 ```
 
-openssl genrsa -out john.ket 2048
+openssl genrsa -out john.key 2048
 
 ```
 
@@ -103,3 +103,29 @@ cat john.crt | base64 -w0
 cat john.key | base64 -w0
 
 ```
+
+## Create role named `john-finance` in `finance` namespace
+
+```
+
+kubectl create role john-finance --verb=get,list --resource=pods --namespace finance
+
+```
+
+## Create RoleBinding named `john-finance-rolebinding` in `finance` namespace
+
+```
+
+kubectl create rolebinding john-finance-rolebinding --role=john-finance --namespace=finance
+
+```
+
+## Create RoleBinding named `finance-rolebinding` in `finance` namespace
+
+```
+
+kubectl create rolebinding finance-rolebinding --role=john-finance --group=finance --namespace=finance
+
+```
+
+
