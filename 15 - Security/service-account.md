@@ -85,7 +85,7 @@ TOKEN=$(cat /var/run/sercrets/kubernetes.io/serviceaccount/token)
 
 ```
 
-curl --cacert $CA -X GET https://kubernetes/api -header "Authorization: Bearer $TOKEN"
+curl --cacert $CA -X GET https://kubernetes/api --header "Authorization: Bearer $TOKEN"
 
 ```
 
@@ -106,6 +106,14 @@ kubectl create role podlister --verb=list --resource=pods
 kubectl create rolebinding appsa-podlist-role-binding  --role=podlister --serviceaccount=default:appsa --dry-run=client -o yaml
 
 kubectl create rolebinding appsa-podlist-role-binding  --role=podlister --serviceaccount=default:appsa
+
+```
+
+## Limit the number of lines in the output
+
+```
+
+curl --cacert $CA -X GET https://kubernetes/api/v1/namespaces/default/pods --header "Authorization: Bearer $TOKEN" | head -n 20
 
 ```
 
